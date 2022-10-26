@@ -1,9 +1,11 @@
 import React from 'react'
 import css from './Create.module.css';
+//import Header from './Header/Header';
 
 const Create = () => {
   return (
     <>
+    {/* <Header></Header> */}
     <h1>Add a New Resource</h1>
     <div class={css.wrapper}>
     <form class={css.Form}>

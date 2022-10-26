@@ -1,6 +1,7 @@
 import React from 'react'
 import css from './SearchBar.module.css';
 import {useState, useEffect} from 'react';
+import Resource from '../Resource/Resource';
 
 const SearchBar = () => {
 
@@ -10,7 +11,7 @@ const SearchBar = () => {
     useEffect(() => {
         async function fetchData() {
           const response = await fetch(
-            `api/Subject/GetByName`
+            `api/Resource/GetByName{search}`
           );
           const data = await response.json();
           setResults(data.data);
@@ -18,14 +19,18 @@ const SearchBar = () => {
         fetchData();
       }, [search]);
 
-      function handleClick(){
-        setSearch('input')
+      function handleClick(e){
+        setSearch(e.target.value)
       }
 
   return (
     <div class={css.search}>
-    <input placeholder="Search" class={css.searchBar} />
+    <input placeholder="Search" class={css.searchBar}  />
     <button class={css.searchButton} onClick={handleClick}>Search</button>
+    {results?  results.map((resource) => {
+              return <Resource Link={resource.resourceLink} Name={resource.resourceName} key={resource.resourceId} />;
+            })
+          : null}
 </div>
   )
 }
@@ -33,6 +38,6 @@ const SearchBar = () => {
 export default SearchBar;
 
 
-//set up a get by name route in the database 
+//set up a get by name route in the database DO THIS 
 //onclick set the search term to be the input field value
 //make an api call when the search term changes

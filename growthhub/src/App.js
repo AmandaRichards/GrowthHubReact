@@ -14,7 +14,7 @@ function App() {
     <h1>What do you want to learn today?</h1>
     <SearchBar></SearchBar>
     <SubjectContainer></SubjectContainer>
-    <Create></Create>
+    {/* <Create></Create> */}
 
     </>
 
