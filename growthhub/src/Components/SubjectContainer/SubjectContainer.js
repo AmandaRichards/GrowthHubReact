@@ -25,7 +25,7 @@ const [subjects, setSubjects] = useState(null);
     <div className={css.subjectContainer}>
       {subjects
           ? subjects.map((subject) => {
-              return <Subject IconURL={subject.iconURL} Title={subject.name} key={subject.subjectId} />;
+              return <Subject IconURL={subject.iconURL} Title={subject.name} key={subject.subjectId} Link="./subject" />;
             })
           : `Loading Data...`}
     </div>

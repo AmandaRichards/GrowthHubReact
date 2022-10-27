@@ -10,17 +10,22 @@
     font-size: 0.5em;
     height: 50em;
     width: 50em;
-    /* //border: solid green 5px; */
+    /* border: solid green 5px;  */
     margin: 0.5em;
     }
     
- .subjectCard :hover {
+ 
+        .fade {
+            opacity: 1.0;
+         }
+         .fade :hover {
+            opacity: 0.5;
             background-color: #DCDCF9;
             opacity: 50%;
             border: 2px solid #171695;
-            border-radius: 0.2em;
+            border-radius: 1em;
             margin: 0.5em;
-        }
+         }
     
     img {
         max-height: 35em;

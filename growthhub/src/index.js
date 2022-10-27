@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Create from './Components/Pages/Create/Create';
-import Subject from './Components/Subject/Subject';
+import Create from './Components/Create/Create';
+import SubjectPage from './Components/SubjectPage/SubjectPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,13 +13,22 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     <BrowserRouter>
+    {/* <ul className="App-header">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/create">About Us</Link>
+              </li>
+              <li>
+                <Link to="/subject">Contact Us</Link>
+              </li>
+            </ul> */}
       <Routes>
-        <Route exact path="/" element={<App />}>
+        <Route path="/" element={<App />}></Route>
           {/* <Route index element={<Home />} /> */}
-          <Route path="/Create" component={<Create />} />
-          <Route exact path="/Subject" element={<Subject />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
-        </Route>
+          <Route path="/create" element={<Create />} ></Route>
+          <Route path="/subject" element={<SubjectPage />} ></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
