@@ -1,18 +1,44 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import HeaderLink from '../NavLink/NavLink';
 import css from './Subject.module.css';
+import { useState } from 'react';
+const Subject = ({Id, IconURL, Title, page}) => {
 
-const Subject = ({Id, IconURL, Title, Link}) => {
+  // const [subject, setSubject] = useState("");
+  // function handleClick(){
+  //   setSubject({Title})
+
+  // }
+
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const response = await fetch(
+  //       `api/Resource/search/${subject}`
+  //     );
+  //     const data = await response.json();
+  //     setResources(data.data);
+  //   }
+  //   fetchData();
+  // }, []);
   return (
-    <a href={Link}>
-     <div class={css.fade}>
-    <div class={css.subjectCard} key={Id}>
+  <>
+     
+     <div className={css.fade}>
+    <div className={css.subjectCard} key={Id}>
     <img src={IconURL} />
-    <h3>{Title}</h3>
+    <button className={css.h33} ><HeaderLink page={page}></HeaderLink></button>
+    
+    
 </div>
-</div> 
-</a>
+</div>
+
+
+</>
+
   )
 }
 
 export default Subject
+
+//onClick={handleClick}

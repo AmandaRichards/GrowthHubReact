@@ -5,30 +5,33 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Create from './Components/Create/Create';
-import SubjectPage from './Components/SubjectPage/SubjectPage';
-
+import SubjectPage from './Components/UXDesignPage/UXDesignPage';
+import UXDesignPage from './Components/UXDesignPage/UXDesignPage';
+import SoftwareEngineering from './Components/SoftwareEngineering/SoftwareEngineering';
+import Consultancy from './Components/Consultancy/Consultancy';
+import DevOps from './Components/DevOps/DevOps';
+import Mindset from './Components/Mindset/Mindset';
+import UserResearch from './Components/User Research/UserResearch';
+import Testing from './Components/Testing/Testing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+  
     <BrowserRouter>
-    {/* <ul className="App-header">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/create">About Us</Link>
-              </li>
-              <li>
-                <Link to="/subject">Contact Us</Link>
-              </li>
-            </ul> */}
+ 
       <Routes>
         <Route path="/" element={<App />}></Route>
           {/* <Route index element={<Home />} /> */}
           <Route path="/create" element={<Create />} ></Route>
-          <Route path="/subject" element={<SubjectPage />} ></Route>
+          <Route path="/all resources" element={<SubjectPage />} ></Route>
+          <Route path="/UX Design" element={<UXDesignPage />} ></Route>
+          <Route path="/Software Engineering" element={<SoftwareEngineering />} ></Route>
+          <Route path="/Consultancy" element={<Consultancy />} ></Route>
+          <Route path="/DevOps" element={<DevOps />} ></Route>
+          <Route path="/Mindset" element={<Mindset />} ></Route>
+          <Route path="/User Research" element={<UserResearch />} ></Route>
+          <Route path="/Testing" element={<Testing />} ></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

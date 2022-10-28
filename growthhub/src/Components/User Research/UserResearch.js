@@ -2,13 +2,15 @@ import React from 'react'
 import ResourceContainer from '../ResourceContainer/ResourceContainer'
 import Header from '../Header/Header'
 
-const SubjectPage = () => {
+const UserResearch = ({topic}) => {
   return (
     <div>
+      
         <Header></Header>
-        <ResourceContainer/>
+        <h1>UserResearch</h1>
+        <ResourceContainer subject={'User Research'}/>
     </div>
   )
 }
 
-export default SubjectPage
+export default UserResearch

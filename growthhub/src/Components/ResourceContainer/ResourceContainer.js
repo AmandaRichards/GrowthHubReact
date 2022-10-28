@@ -1,16 +1,16 @@
-
 import React, { useEffect, useState } from "react";
 import Resource from "../Resource/Resource";
 import css from './ResourceContainer.module.css'
 
 
-function ResourceContainer(){
+function ResourceContainer({subject}){
 
   const [resources, setResources] = useState(null);
+
 useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `api/Resource/GetAll`
+        `api/Resource/search/${subject}`
       );
       const data = await response.json();
       setResources(data.data);

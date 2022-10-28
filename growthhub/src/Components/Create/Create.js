@@ -13,21 +13,26 @@ function Create () {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      let form = new FormData();
+
+      form.append("ResourceName", name);
+      form.append("ResourceSubject", subject);
+      form.append("ResourceLink", link);
+
       let res = await fetch(`api/Resource`, {
+        mode: 'no-cors',
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
       },
-        body: JSON.stringify({
-          resourceName: name,
-          resourceSubject: subject,
-          resourceLink: link, 
-        }),
+        body: form,
       
 
       });
       let resJson = await res.json();
       if (res.status === 200) {
+        console.log('the name');
+        console.log(name)
         setName("");
         setSubject("");
         setLink("");
@@ -44,30 +49,33 @@ function Create () {
   return (
     <>
     <Header></Header>
-    <div class={css.page}>
-    <div class={css.wrapper}>
+    <div className={css.page}>
+    <div className={css.wrapper}>
     <h1>Add a New Resource</h1>
+    <p>{name}</p>
     
-    <form class={css.Form} onSubmit={handleSubmit}>
+    <form className={css.Form} onSubmit={handleSubmit}>
         <input  
           type="text"
           value={name}
           placeholder="Name" 
           onChange={(e) => setName(e.target.value)}
-          class={css.field} />
+         
+          className={css.field} />
         <input 
         type="text"
         value={subject}
+        
         placeholder="Subject" 
         onChange={(e) => setSubject(e.target.value)}
-        class={css.field} />
+        className={css.field} />
         <input 
         type="text"
         value={link}
         placeholder="Link" 
         onChange={(e) => setLink(e.target.value)}
-        class={css.field} />
-        <button type="submit" onSubmit={handleSubmit} class={css.submit}>Submit</button>
+        className={css.field} />
+        <button type="submit" class={css.submit}>Submit</button>
 
         <div className="message">{message ? <p>{message}</p> : null}</div>
     </form>
@@ -81,7 +89,7 @@ export default Create;
 
 
 
-
+//onSubmit={handleSubmit} 
 
 
 

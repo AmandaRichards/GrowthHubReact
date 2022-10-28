@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     background-color: #171695;
-    height: 5em;
+    height: 1em;
     width: 80em;
     color: white;
     font-size: 7px;
@@ -16,6 +16,8 @@
 
 .resourcetitle{
     color: white;
+    font-size: 20px;
+
 }
 
 

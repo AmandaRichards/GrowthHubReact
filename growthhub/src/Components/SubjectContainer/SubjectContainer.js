@@ -3,9 +3,10 @@ import css from "./SubjectContainer.module.css";
 import Subject from "../Subject/Subject";
 
 
-function SubjectContainer() {
+function SubjectContainer({search}) {
 
 const [subjects, setSubjects] = useState(null);
+
 
   useEffect(() => {
     async function fetchData() {
@@ -19,13 +20,13 @@ const [subjects, setSubjects] = useState(null);
   }, []);
   console.log(subjects);
 
- 
 
   return (
     <div className={css.subjectContainer}>
+      
       {subjects
           ? subjects.map((subject) => {
-              return <Subject IconURL={subject.iconURL} Title={subject.name} key={subject.subjectId} Link="./subject" />;
+              return <Subject IconURL={subject.iconURL} Title={subject.name} key={subject.subjectId} page={subject.name}/>;
             })
           : `Loading Data...`}
     </div>
@@ -35,3 +36,4 @@ const [subjects, setSubjects] = useState(null);
 
 
   export default SubjectContainer;
+  //Link={subject.name.toLowerCase()} 

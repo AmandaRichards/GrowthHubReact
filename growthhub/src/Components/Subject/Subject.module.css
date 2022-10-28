@@ -35,8 +35,11 @@
         align-items: center;
     }
     
-    h3 {
+    .h33 {
         align-content: center;
         align-items: center;
         text-align: center;
+        font-size: 5em;
+        background-color: white;
+        border: 0;
     }
